@@ -1,0 +1,231 @@
+// Import app variables
+@import '../../app-variables';
+/** Slider title format */
+.slider-title {
+    color: #fff;
+    font-weight: bold;
+    background-color: rgb(125, 125, 125);
+    padding: 8;
+    text-align: center;
+    vertical-align: bottom;
+}
+
+/** Arrows */
+.arrow {
+    color: #ffffff;
+    font-size: 32;
+    vertical-align: middle;
+    padding: 10;
+}
+.icon-grid{
+    padding-top: 20;
+    background-color: $background;
+    StackLayout{
+        width: 25%;
+        height: 50%;
+        Image{
+            width: 36;
+            height: 36;
+            horizontal-align: center;
+        }
+        Label{
+            margin-top: 12.5;
+            color: $primary;
+            font-size: 13;
+            line-height: 13.5;
+            horizontal-align: center;
+        }
+    }
+}
+
+.bg-stack{
+    color: #FFF;
+    width: 100%;
+    height: 150;
+    background: url("~/assets/pic_hajjumrah.png") no-repeat top center;
+    background-size: cover;
+    padding: 25 5 0 0;
+
+    Label{
+        width: 200;
+        font-size: 29;
+
+        &.title{
+            font-size: 16;
+            margin-bottom: 10;
+        }
+        &.desc{
+            font-size: 12;
+        }
+    }
+}
+
+.card {
+    margin: 10;
+    border-width: 1;
+    border-color: rgb(235, 234, 234);
+    border-radius: 3;
+    padding: 14.5 9 9.5 9;
+
+    .card-header {
+        min-height: 16;
+       
+        >Label{
+            vertical-align: center;
+        }
+        .title {
+            color: $primary;
+            font-size: 16;
+            font-weight: bold;
+            margin-right: 19.5;
+        }
+        .desc {
+            color: rgb(153, 153, 163);
+            font-size: 11;
+        }
+    }
+    .card-boday{
+        
+        > Image {
+            margin-top: 14.5;
+            width: 34%;
+            height: auto;
+            + StackLayout{
+                width: 67%;
+                padding-left: 10.5;
+            }
+        }
+        .content{
+            margin-top: 14.5;
+            font-size: 13;
+            color: rgb(51, 51, 51);
+
+            + StackLayout{
+                horizontal-align: right;
+                margin-top: 28;
+
+                Image{
+                    width: 21.5;
+                    height: 17;
+                    margin-right: 8.5;
+                }
+                Label{
+                    font-size: 13;
+                    color: rgb(208,28,5);
+                }
+            }
+        }
+    
+    }
+}
+.card-thumbnail{
+    height: 170.5;
+    .card-header{
+        min-height: 20;
+    }
+}
+.card-image{
+    // height: 251;
+    .card-header{
+        min-height: 36;
+    }
+    .card-image-boday{
+        width: 100%;
+        
+        Image{
+            width: 100%;
+            height: auto;
+            horizontal-align: center;
+
+            + StackLayout{
+                margin-top: 8;
+                horizontal-align: right;
+                vertical-align: center;
+                StackLayout{
+                    margin-left: 33.5;
+                }
+
+                Image{
+                    width: 21.5;
+                    height: 17;
+                    margin-right: 8.5;
+                }
+                Label{
+                    font-size: 13;
+                    color: rgb(11,111,50);
+                }
+            }
+        }
+    }
+}
+
+.card-text{
+    // height: 160.5;
+
+    .card-header{
+        min-height: 36;
+    }
+
+    .card-text-boday{
+        Label{
+            font-size: 15;
+        }
+
+        StackLayout{
+            horizontal-align: right;
+            vertical-align: center;
+            margin:20 0 11 0;
+
+            Image{
+                width: 21.5;
+                height: 17;
+                margin-right: 8.5;
+            }
+            Label{
+                font-size: 13;
+                color: rgb(11,111,50);
+            }
+        }
+    }
+}
+
+.card-bg-image{
+    height: 251;
+    .card-header{
+        min-height: 36;
+    }
+    .card-image-boday{
+        width: 100%;
+        
+        StackLayout.boday-bg-image{
+            width: 100%;
+            height: 159.5;
+            color: #fff;
+            font-size: 82.3;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            StackLayout{
+                width: 100%;
+                height: 100%;
+            }
+            &+ StackLayout{
+                margin-top: 8;
+                horizontal-align: right;
+                vertical-align: center;
+                StackLayout{
+                    margin-left: 33.5;
+                }
+
+                Image{
+                    width: 21.5;
+                    height: 17;
+                    margin-right: 8.5;
+                }
+                Label{
+                    font-size: 13;
+                    color: rgb(11,111,50);
+                }
+            }
+        }
+    }
+}

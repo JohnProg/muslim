@@ -1,0 +1,45 @@
+<WrapLayout sdkExampleTitle sdkToggleNavButton class="page page-content">
+    <FlexboxLayout class="flex_nav" flexDirection="column">
+        <FlexboxLayout class="n_top">
+            <Label class="n_t_big" text="Duhr"></Label>
+            <Label class="n_t_s" text="Remaining time" textAlignment="right"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout class="n_bottom">
+            <FlexboxLayout>
+                <Image src="res://icon_alarm_clock"></Image>
+                <Label class="n_b_s" [text]="alarmClock"></Label>
+            </FlexboxLayout>
+            <FlexboxLayout>
+                <Label textAlignment="right" class="n_b_big" [text]="differenceTime"></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+    </FlexboxLayout>
+    <StackLayout class="content" >
+        <ListView class="list-group" [items]="getDataPrayer" margin="0 7">
+            <ng-template let-country="item" >
+                <FlexboxLayout class="list-group-item">
+                    <FlexboxLayout class="c_left">
+                        <Label [text]="country.type"></Label>
+                        <Label [text]="country.hour + ':' + country.minute"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout class="c_right">
+                        <FlexboxLayout class="c_r_c">
+                            <Image class="play" *ngIf="country.enable" (tap)="onTap(country.type, country.enable)" src="res://icon_voice" ></Image>
+                            <Image class="play" *ngIf="!country.enable" (tap)="onTap(country.type, country.enable)" src="res://icon_voice0" ></Image>
+                        </FlexboxLayout>
+                        <FlexboxLayout class="c_r_c" flexDirection="column-reverse">
+                            <FlexboxLayout flexDirection="column-reverse" alignSelf="center" height="30" width="48">
+                                <Image *ngIf="country.type == 'fajr'" src="res://icon_sunrise" height="19.5" width="43.5"></Image>
+                                <Image *ngIf="country.type == 'shurooq'" src="res://icon_sunrise_1" height="30" width="48"></Image>
+                                <Image *ngIf="country.type == 'dhuhr' || country.type == 'asr'" src="res://icon_sunrise_2" height="35" width="35"></Image>
+                                <Image *ngIf="country.type == 'maghrib'" src="res://icon_sunrise_3" height="30" width="48"></Image>
+                                <Image *ngIf="country.type == 'isha'" src="res://icon_moon" height="28.5" width="28.5"></Image>
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+            </ng-template>
+        </ListView>
+        
+    </StackLayout>
+</WrapLayout>

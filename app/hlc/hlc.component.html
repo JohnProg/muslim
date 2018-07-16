@@ -1,0 +1,9 @@
+<StackLayout sdkExampleTitle sdkToggleNavButton orientation="vertical" class="page" orientation="vertical">
+    <Label class="text" horizontalAlignment="center" text="HLC:12"></Label>
+    <AbsoluteLayout class="moon">
+        <Image src="res://moon"></Image>
+        <Label top="46.75" left="39.5" [text]="percent"></Label>
+    </AbsoluteLayout>
+    <Label  *ngIf="randomDisplay" class="btn" [text]="addWallet" ></Label>
+    <Label *ngIf="isDisplay" class="btn" text="Tap me!" (tap)="onTap()"></Label>
+</StackLayout>

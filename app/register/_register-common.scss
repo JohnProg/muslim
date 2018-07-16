@@ -1,0 +1,32 @@
+StackLayout{
+    background:url(res://login_bg) no-repeat top top;
+    background-size: 100% 100%;
+    color: white;
+}
+.header,.weight{
+    font-weight: bold;
+}
+.input{
+    font-size:15;
+    border-color: #fff;
+    border-bottom-width: 0.5;
+}
+.input Label{
+    padding-top: 10;
+    font-weight: bold;
+    width: 116.5;
+}
+.input TextField{
+    width: 60%;
+    color: white;
+    font-size: 14;
+    border-color: transparent;
+    placeholder-color: rgba(255, 255, 255, 0.54);
+    border-bottom-width: 0.5;
+}
+.button Button{
+    color: rgb( 62, 117, 53); 
+    font-size: 17;
+    line-height: 24;
+    font-weight: bold;
+}

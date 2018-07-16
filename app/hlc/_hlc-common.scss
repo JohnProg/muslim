@@ -1,0 +1,39 @@
+.page{
+    background:url(res://bg) no-repeat;
+    background-size: 100% 100%;
+    color: #FFF;
+
+    .text{
+        font-size: 18;
+        margin: 36 0;
+    }
+
+    .moon{
+        margin-top: 2.5;
+        width: 126.5;
+        height: 138.5;
+        
+        Image{
+            background-size: 100% 100%;
+            width: 126.5;
+            height: 138.5;
+        }
+
+        Label{
+            font-size: 24;
+        }
+
+    }
+
+    .btn{
+        margin-top: 20;
+        background-size: 100% 100%;
+        background:url(res://buttom_btn) no-repeat;
+        padding: 0 12;
+        width: 84.5;
+        height: 20;
+        font-size: 14;
+        color: rgb(67, 142, 55);
+        text-align: center
+    }
+}

@@ -1,0 +1,8 @@
+
+<WrapLayout width="100%"  class="container" class="text-center" sdkExampleTitle sdkToggleNavButton>
+                <Image width="100%" height="160"  src="~/assets/pic_TT.png" stretch="aspectFill"></Image>
+        <StackLayout  width="33.333%"  class="iconLink" *ngFor="let item of items" class="p-10 text-center">
+                <Image marginBottom="11.5" width="40" height="40" [src]="item.icon" [nsRouterLink]="[item.routerLink]"></Image>
+                <Label [text]="item.text" textWrap="false"></Label>
+        </StackLayout>
+</WrapLayout>

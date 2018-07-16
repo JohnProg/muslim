@@ -1,0 +1,41 @@
+<ScrollView  class="page" orientation="vertical" >
+    <StackLayout sdkExampleTitle sdkToggleNavButton orientation="vertical">
+        <FlexboxLayout width="100%" flexDirection="column" padding="0 35" marginTop="46">
+            <FlexboxLayout class="header" flexDirection="column">
+                <Label text="Register" fontSize="36"></Label>
+                <FlexboxLayout>
+                    <Label fontSize="15" marginTop="10" width="188" textWrap="true" text="Please fill your information bellow"></Label>
+                </FlexboxLayout>
+            </FlexboxLayout>
+
+            <FlexboxLayout flexDirection="column" marginTop="120.5" >
+                <FlexboxLayout class="input">
+                    <Label alignSelfProperty="center" text="Name"></Label>
+                    <TextField [(ngModel)]="name" [text]="name" ></TextField>
+                </FlexboxLayout>
+                <FlexboxLayout class="input">
+                    <Label alignSelfProperty="center" text="Email"></Label>
+                    <TextField [(ngModel)]="email" hint="email" [text]="email" keyboardType="email"></TextField>
+                </FlexboxLayout>
+                <FlexboxLayout class="input">
+                    <Label alignSelfProperty="center" text="Password"></Label>
+                    <TextField  [(ngModel)]="pass" secure="true" hint="Password" [text]="pass" ></TextField>
+                </FlexboxLayout>
+            </FlexboxLayout>
+            
+            <FlexboxLayout class="button" flexDirection="column" marginTop="40">
+                <Button margin="0" borderColor="transparent" backgroundColor="white" (tap)="submit()"  borderRadius="20" text="SIGN UP NOW" class="btn btn-outline btn-active" ></Button>
+                <Label [text]="describe" alignSelf="center" paddingTop="24.5" textWrap="true"></Label>
+            </FlexboxLayout>
+            <FlexboxLayout flexDirection="column-reverse" marginTop="83">
+                
+                <FlexboxLayout marginBottom="22" alignSelf="flex-end">
+                    <Label  text="— gang or connect with"></Label>
+                    <Image width="26" marginLeft="15"  height="26" (tap)="loginByFacebook()" src="res://icon_facebook"></Image>
+                    <Image width="26" marginLeft="15"  height="26" (tap)="loginByTwitter()" src="res://icon_twitter"></Image>
+                    <Image width="26" marginLeft="15"  height="26" (tap)="loginByGoogle()" src="res://icon_google"></Image>
+                </FlexboxLayout>
+            </FlexboxLayout>
+        </FlexboxLayout>
+    </StackLayout>
+</ScrollView>

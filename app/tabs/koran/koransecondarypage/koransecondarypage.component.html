@@ -1,0 +1,50 @@
+<ActionBar [title]="title">
+    <NavigationButton icon="res://icon_return" (tap)="goBack()"></NavigationButton>
+</ActionBar>
+<DockLayout  stretchLastChild="true">
+    <StackLayout  *ngIf="isPlayShow"   dock="bottom" width="100%" height="50" backgroundColor="rgb(51,51,51)">
+        <FlexboxLayout  alignItems="center">
+                <StackLayout  width="10%">
+                        <GridLayout columns="*">
+                            <Image height="15.5" (tap)="audioPlayPrev()" src="res://icon_previous"></Image>
+                        </GridLayout>
+                </StackLayout>
+                <StackLayout  width="10%">
+                        <GridLayout columns="*">
+                             <Image height="27.5" (tap)="audioPlayMusic()" [src]="isPlay ? 'res://koranplay' : 'res://koranpause'"></Image>
+                        </GridLayout>
+                    </StackLayout>
+                 <StackLayout width="10%">
+                        <GridLayout columns="*" >
+                            <Image height="16.5" (tap)="audioPlayNext()" src="res://icon_next"></Image>
+                        </GridLayout>
+                        </StackLayout>
+                <StackLayout  width="10%">
+                        <GridLayout>
+                            <Label height="16"  text="1:004" color="white" textWrap="true"></Label>
+                         </GridLayout>
+                </StackLayout>
+                <StackLayout  width="50%">
+                </StackLayout>
+                <StackLayout  width="10%" >
+                        <GridLayout columns="*" >
+                            <Image height="15.5" (tap)="isPlayControl()"  src="res://icon_close"></Image> 
+                         </GridLayout>
+                </StackLayout>
+        </FlexboxLayout>
+        </StackLayout>
+        <ListView [items]="items" (loadMoreItems)="loadMoreItems()">
+            <ng-template let-item="item" let-i="index">
+                    <FlexboxLayout (tap)="playChooseSection(item.arabicAudioUrl,i)" marginBottom="10" marginTop="10" class="p-l-10 p-r-15" flexDirection="column">
+                            <FlexboxLayout flexDirection="column" >
+                                <FlexboxLayout >
+                                    <Image  (tap)="markSections(item.no,item)" width="15"  [src]="item.isMark ? 'res://bookmarksyes' : 'res://bookmarksno'"></Image>
+                                    <Label marginLeft="5" letterSpacing="0.1" color="rgb(102,102,102)"  [text]="item.length" ></Label>
+                                </FlexboxLayout>
+                                <Label color="black" fontSize="24" paddingBottom="10"  alignSelf="flex-end" [text]="item.text" textWrap="true" ></Label>
+                                <Label color="rgb(129, 97, 76)" fontSize="13" paddingLeft="10" alignSelf="flex-end" [text]="item.content" textWrap="true" ></Label>
+                            </FlexboxLayout>
+                        </FlexboxLayout>
+            </ng-template>
+     </ListView>
+</DockLayout>

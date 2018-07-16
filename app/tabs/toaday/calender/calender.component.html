@@ -1,0 +1,23 @@
+<StackLayout sdkExampleTitle sdkToggleNavButton class="page">
+        <StackLayout class="calendar" tkExampleTitle tkToggleNavButton>
+                <RadCalendar #myCalendar [eventSource]="eventSource" [monthViewStyle]="monthViewStyle"
+                 [viewMode]="viewMode" locale="en-GB" (loaded)="calendarloaded($event)"
+                (Swipe)="setEventSource($event)" (viewModeChanged)="onViewModeChangedEvent($event)"></RadCalendar> 
+        </StackLayout>
+        <FlexboxLayout class="h2" flexDirection="column-reverse" justifyContent="flex-start">
+                <Label text="Muslim Holidays" class="list-group-item-heading"></Label>
+        </FlexboxLayout>
+        <ListView class="list-group" [items]="countries">
+        <ng-template let-country="item">
+                <FlexboxLayout class="list-group-item">
+                        <FlexboxLayout width="50%" flexDirection="column" alignSelf="center">
+                                <Label [text]="country.name"></Label>
+                                <Label class="title" [text]="country.title"></Label>
+                        </FlexboxLayout>
+                        <FlexboxLayout class="date" width="50%" flexDirection="column-reverse" alignSelf="center">
+                                <Label alignSelf="flex-end" [text]="country.date"></Label>
+                        </FlexboxLayout>
+                </FlexboxLayout>
+        </ng-template>
+        </ListView>
+</StackLayout>

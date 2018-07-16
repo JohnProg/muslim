@@ -1,0 +1,14 @@
+<GridLayout  class="page page-content">
+    <ListView sdkExampleTitle sdkToggleNavButton class="list-group" [items]="countries" margin="0 20">
+        <ng-template let-country="item"  >
+            <FlexboxLayout  flexDirection="row" class="list-group-item" paddingLeft="0" paddingRight="0" [nsRouterLink]="[country.routerLink]">
+                <StackLayout orientation="vertical" width="50%">
+                    <Label horizontalAlignment="left" [text]="country.name" class="list-group-item-heading" verticalAlignment="center" style="width: 60%"></Label>
+                </StackLayout>
+                <StackLayout orientation="vertical" width="50%">
+                    <Image horizontalAlignment="right" [src]="country.imageSrc" class="thumb img-circle"></Image>
+                </StackLayout>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+</GridLayout>

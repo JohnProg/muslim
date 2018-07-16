@@ -1,0 +1,20 @@
+<ListView [items]="items" (loadMoreItems)="loadMoreItems()">
+    <ng-template let-item="item" let-i="index">
+        <StackLayout backgroundColor="rgb(248,248,248)">
+            <FlexboxLayout class="p-l-20 p-r-20" marginTop="19">
+                <FlexboxLayout (tap)="getReadContent(i)" [nsRouterLink]="['koransecondarypage',item.id]" paddingBottom="10" width="100%">
+                    <FlexboxLayout width="15%" alignItems="center">
+                        <Label fontWeight="500" fontSize="20" [text]="i+1 + '.'" textWrap="true"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout width="55%" flexDirection="column" color="rgb(102,102,102)">
+                        <Label fontSize="15" color="rgb(72,122,64)" [text]="item.title"></Label>
+                        <Label textWrap="true" fontSize="12" [text]="item.auther+' '+'('+ item.count+')'"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout flexDirection="column-reverse" justifyContent="space-around" alignItems="stretch" width="30%">
+                        <Label alignSelf="flex-end"  class="text-right"  fontWeight="500"  fontSize="24" [text]="item.araibicInfo"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+            </FlexboxLayout>
+        </StackLayout>
+    </ng-template>
+</ListView>

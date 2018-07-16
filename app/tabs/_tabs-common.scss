@@ -1,0 +1,11 @@
+// Custom common variables
+@import '../app-variables';
+.action-bar {
+    background-color: #FFF;
+    color: $primary;
+}
+TabView {
+    tab-text-color: $tab-text-color;
+    selected-tab-text-color: $tab-selected-text-color;
+    tab-background-color: $tab-background-color;
+}

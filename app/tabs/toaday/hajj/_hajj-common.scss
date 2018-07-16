@@ -1,0 +1,22 @@
+.page {
+    
+    ListView{
+        FlexboxLayout{
+            color: rgb(51, 51, 51);
+            font-size: 15;
+            line-height: 15;
+            
+            .title{
+                font-size: 12;
+                color: rgb(102, 102, 102);
+            }
+        }
+
+        Image{
+            width: 10;
+            height: 17.5;
+            margin-top: 9;
+        }
+    }
+    
+}

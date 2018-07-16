@@ -1,0 +1,26 @@
+<StackLayout sdkExampleTitle sdkToggleNavButton orientation="vertical" class="page">
+    <Label horizontalAlignment="center" class="title" text="99 Names of Allah"></Label>
+    <WrapLayout orientation="horizontal">
+        <ListView [items]="myItems" (loadMoreItems)="loadMoreItems()">
+            <ng-template let-itema="item" let-i="index">
+                <StackLayout>
+                    <FlexboxLayout class="tit_h1" flexDirection="column">
+                        <FlexboxLayout>
+                            <Label text="{{i+1}}." marginRight="16"></Label>
+                            <Label class="bold" [text]="itema?.englishName"></Label>
+                        </FlexboxLayout>
+                        <Label class="blackbody" [text]="itema?.englishMeaning"></Label>
+                        <Label textAlignment="right" alignItems="flex-start" class="blackbody name" [text]="itema?.name"></Label>
+                        <Label textWrap="true" [text]="itema?.englishIntro"></Label>
+                    </FlexboxLayout>
+                    <!--FlexboxLayout class="content">
+                        <Label textWrap="true" [text]="itema.description" width="75%"></Label>
+                        <FlexboxLayout width=" 25%">
+                            <Label class="text" [text]="itema.arabicName"></Label>
+                        </FlexboxLayout>
+                    </FlexboxLayout-->
+                </StackLayout>
+            </ng-template>
+        </ListView>
+    </WrapLayout>
+<StackLayout>

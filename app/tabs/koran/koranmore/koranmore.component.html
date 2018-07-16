@@ -1,0 +1,23 @@
+
+<PullToRefresh (refresh)="refreshList($event)">
+<ListView [items]="items" (loadMoreItems)="loadMoreItems()">
+    <ng-template let-item="item" let-i="index">
+            <FlexboxLayout [nsRouterLink]="['koranread',item.chapterNo]" (tap)="getReadContent(item.no)" marginBottom="10" marginTop="10" class="p-l-10 p-r-15" flexDirection="column">
+                    <FlexboxLayout flexDirection="column" >
+                        <FlexboxLayout >
+                            <Image  (tap)="markSections(item.no, item.chapterNo,i)" width="15" src="res://bookmarksyes"></Image>
+                            <Label letterSpacing="0.1" color="rgb(102,102,102)"  [text]="item.length" ></Label>
+                        </FlexboxLayout>
+                        <Label color="black" fontSize="24" paddingBottom="10"  alignSelf="flex-end" [text]="item.text" textWrap="true" ></Label>
+                        <Label color="rgb(129, 97, 76)" fontSize="13" paddingLeft="10" alignSelf="flex-end" [text]="item.content" textWrap="true" ></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+    </ng-template>
+</ListView>
+</PullToRefresh>
+<FlexboxLayout *ngIf="loginStaues === false" flexDirection="column-reverse" justifyContent="space-around" alignItems="stretch">
+    <Label alignSelf="center" (tap)="goLogin()"  fontSize="16"  [text]="isDis"></Label>
+</FlexboxLayout>
+<FlexboxLayout *ngIf="items.length === 0" flexDirection="column-reverse" justifyContent="space-around" alignItems="stretch">
+    <Label alignSelf="center"   fontSize="16"  [text]="isAdd"></Label>
+</FlexboxLayout>

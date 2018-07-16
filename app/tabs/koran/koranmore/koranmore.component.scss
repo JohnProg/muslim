@@ -1,0 +1,17 @@
+StackLayout{
+    border-top-width: 1;
+    border-bottom-width: 1;
+    border-color: rgb(204, 204, 204);
+    font-weight: bold;
+}
+Label{
+    padding: 9 9 9.5 6.5;
+    font-size: 12;
+}
+FlexboxLayout{
+    border-radius: 5;
+}
+.isColor{
+    background-color: rgb(102, 102, 102);
+    color: white
+}

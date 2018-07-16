@@ -1,0 +1,20 @@
+<StackLayout sdkExampleTitle sdkToggleNavButton orientation="vertical" class="page page-content">
+    <ListView class="list-group" [items]="countries">
+        <ng-template let-country="item">
+            <FlexboxLayout flexDirection="row" class="list-group-item">
+                <Image horizontalAlignment="left" [src]="country.imageSrc" class="thumb img-circle"></Image>
+                <Label horizontalAlignment="right" [text]="country.name" class="list-group-item-heading"></Label>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+    <FlexboxLayout class="h2" justifyContent="flex-start" height="38.5">
+        <Label alignSelf="center" text="LEGAL INFO" class="list-group-item-heading"></Label>
+    </FlexboxLayout>
+    <ListView class="list-group" [items]="legalInfo">
+        <ng-template let-country="item">
+            <FlexboxLayout flexDirection="row" class="list-group-item">
+                <Label horizontalAlignment="left" [text]="country" class="list-group-item-heading legalinfo"></Label>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>

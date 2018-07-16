@@ -1,0 +1,9 @@
+// Import app variables
+@import 'app-variables';
+ActionBar{
+    background-color: #FFF;
+    color: $primary;
+}
+Label{
+    word-wrap: break-word
+}

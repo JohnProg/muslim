@@ -1,0 +1,37 @@
+<ScrollView  orientation="vertical">
+    <StackLayout sdkExampleTitle sdkToggleNavButton  orientation="vertical">
+        <FlexboxLayout flexDirection="column" padding="0 35" marginTop="100">
+            <FlexboxLayout class="header" flexDirection="column">
+                <Label text="Welcome" fontSize="36"></Label>
+                <FlexboxLayout>
+                    <Label fontSize="15" marginTop="10" width="188" textWrap="true" text="Please sign in for your pious prayers"></Label>
+                </FlexboxLayout>
+            </FlexboxLayout>
+            <FlexboxLayout flexDirection="column" marginTop="116.5">
+                <FlexboxLayout class="input" fontSize="15" borderBottomWidth="0.5" borderColor="#fff">
+                    <Label alignSelfProperty="center" text="Jsername"></Label>
+                    <TextField  borderBottomWidth="0.5" [(ngModel)]="email"  [text]="email" hint="Email Address"  keyboardType="email"></TextField>
+                </FlexboxLayout>
+                <FlexboxLayout class="input" borderBottomWidth="0.5" borderColor="#fff" fontSize="15" >
+                    <Label alignSelfProperty="center" text="Password"></Label>
+                    <TextField  borderBottomWidth="0.5"  secure="true" [(ngModel)]="pass" [text]="pass" hint="Password"  ></TextField>
+                </FlexboxLayout>
+                    <Label text="forget password?"  (tap)="addUserPassword()"  alignSelf="flex-end" padding="10 0"></Label>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout class="button" flexDirection="column" marginTop="34">
+            <Button borderColor="transparent" (tap)="addUserLogin()"  backgroundColor="white" borderRadius="20" text="Login With" class="btn btn-outline btn-active" ></Button>
+            <Label text="Login witch Facebook" alignSelf="center" paddingTop="15"></Label>
+        </FlexboxLayout>
+        <FlexboxLayout flexDirection="column" marginTop="91" borderTopWidth="0.5" borderColor="#fff">
+            <FlexboxLayout height="57" orientation="horizontal" alignSelf="center"> 
+                <StackLayout orientation="horizontal">
+                    <FlexboxLayout  verticalAlignment="center"> 
+                        <Label text="Do not have an account?"></Label>
+                        <Label  (tap)="OnClickLink()"  class="weight" text="Register Now" marginLeft="7.5"></Label>
+                    </FlexboxLayout>
+                </StackLayout>
+            </FlexboxLayout>
+        </FlexboxLayout>
+    </StackLayout>
+</ScrollView>

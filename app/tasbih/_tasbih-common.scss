@@ -1,0 +1,62 @@
+.page {
+    .banner{
+        width: 100%;
+        height: 40%;
+    }
+    
+    .header{
+        Image{
+            margin: 15.5 10;
+            width: 25;
+            height: auto;
+        }
+    }
+    
+    .main{
+        .main-line{
+            width: 100%;
+            height: auto;
+        }
+        .main-bead-left{
+            width: 180;
+            height: auto;
+        }
+        .main-bead-right{
+            width: 150;
+            height: auto;
+        }
+        .main-bead-move{
+            width: 110;
+            height: auto;
+        }
+    }
+
+    .footer{
+        margin-right: 15;
+        > StackLayout,
+        > Label{
+            horizontal-align: right;
+        }
+
+        > StackLayout{
+            margin-bottom: 5;
+            .num-large{
+                margin-right: 6;
+                font-size: 55;
+            }
+            .num-normal{
+                font-size: 30;
+            }
+        }
+
+        >.total-stack {
+            Label{
+                font-size: 24;
+            }
+            .num{
+                min-width: 36;
+                text-align: right;
+            }
+        }
+    }
+}

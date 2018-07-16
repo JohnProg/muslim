@@ -1,0 +1,16 @@
+<StackLayout sdkExampleTitle sdkToggleNavButton orientation="vertical" class="page" orientation="vertical">
+    <Image src="res://pic_2"></Image>
+    <ListView class="list-group" [items]="hajjUmrchs" margin="0 20">
+        <ng-template let-country="item">
+            <FlexboxLayout flexDirection="row" class="list-group-item" paddingLeft="0" paddingRight="0" [nsRouterLink]="'../umrch/' + country.id">
+                <StackLayout orientation="vertical" width="70%">
+                    <Label horizontalAlignment="left" [text]="country.majorTitle" class="list-group-item-heading"></Label>
+                    <Label horizontalAlignment="left" [text]="country.minorTitle" class="list-group-item-heading title" ></Label>
+                </StackLayout>
+                <StackLayout orientation="vertical" width="30%">
+                    <Image horizontalAlignment="right" src="res://icon_getinto" class="thumb img-circle" verticalAlignment="center"></Image>
+                </StackLayout>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>

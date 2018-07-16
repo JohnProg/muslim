@@ -1,0 +1,112 @@
+
+<ScrollView  orientation="vertical">
+    <StackLayout sdkExampleTitle sdkToggleNavButton>
+        <GridLayout [carousel]="images" height="161.5" carouselLabelOverlay="true" carouselSpeed="2000"></GridLayout>
+        <GridLayout rows="89,89" columns="auto, auto, auto, auto" horizontalAlignment="center" class="icon-grid">
+            <StackLayout [nsRouterLink]="['times']" orientation="vertical" row="0" col="0">
+                <Image src="res://icon_times"></Image>
+                <Label text="times" textWrap="false"></Label>
+            </StackLayout>
+            <StackLayout [nsRouterLink]="['calender']" orientation="vertical" row="0" col="1">
+                <Image src="res://icon_calender"></Image>
+                <Label text="calender" textWrap="false"></Label>
+            </StackLayout>
+            <StackLayout [nsRouterLink]="['pray']" orientation="vertical" row="0" col="2">
+                <Image src="res://icon_pray"></Image>
+                <Label text="pray" textWrap="false"></Label>
+            </StackLayout>
+            <StackLayout [nsRouterLink]="['kaaba']" orientation="vertical" row="0" col="3">
+                <Image src="res://icon_qibla"></Image>
+                <Label text="qibla" textWrap="false"></Label>
+            </StackLayout>
+            <StackLayout (tap)="onTap()" orientation="vertical" row="1" col="0">
+                <Image src="res://icon_quran"></Image>
+                <Label text="quran" textWrap="false"></Label>
+            </StackLayout>
+            <StackLayout [nsRouterLink]="['inspiration']" orientation="vertical" row="1" col="1">
+                <Image src="res://icon_inspiration"></Image>
+                <Label text="inspiration" textWrap="true"></Label>
+            </StackLayout>
+            <StackLayout [nsRouterLink]="['ramadan']" orientation="vertical" row="1" col="2">
+                <Image src="res://icon_ramadan"></Image>
+                <Label text="ramadan" textWrap="false"></Label>
+            </StackLayout>
+            <StackLayout [nsRouterLink]="['more']" orientation="vertical" row="1" col="3">
+                <Image src="res://icon_qita"></Image>
+                <Label text="more" textWrap="false"></Label>
+            </StackLayout>
+        </GridLayout>
+        <StackLayout [nsRouterLink]="['hajj']" orientation="vertical" class="bg-stack">
+            <Label class="title" horizontalAlignment="right" text="HAJJ UMRAH" textWrap="false"></Label>
+            <Label class="desc" horizontalAlignment="right" text="Muslim pilgrimage to MeccaKaaba(the Kaaba) General shall perform a number of religiouseceremony, the 6 years(627),starting from the teachings ..." textWrap="true"></Label>
+        </StackLayout>
+        <FlexboxLayout class="card card-thumbnail" flexDirection="column" justifyContent="space-between">
+            <StackLayout class="card-header" orientation="horizontal">
+                <Label class="title" [text]="title" textWrap="false"></Label>
+                <Label class="desc" [text]="no" textWrap="false"></Label>
+            </StackLayout>
+            <FlexboxLayout class="card-boday" flexDirection="row" justifyContent="space-between">
+                <Image translateX="-7" src="~/assets/pic_ alcoran.png"></Image>
+                <StackLayout orientation="vertical">
+                    <Label textAlignment="right" class="content" [text]="arabicContents" textWrap="true"></Label>
+                    <StackLayout [nsRouterLink]="['popular']" orientation="horizontal">
+                        <Image src="res://icon_read"></Image>
+                        <Label text="Read" textWrap="true"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </FlexboxLayout>
+        </FlexboxLayout>
+        <FlexboxLayout class="card card-bg-image" flexDirection="column" justifyContent="space-between">
+            <StackLayout class="card-header" orientation="vertical">
+                <Label class="title" text="The 99 names of Allah" textWrap="false"></Label>
+                <Label class="desc" text="Aama AI-Husna" textWrap="false"></Label>
+            </StackLayout>
+            <StackLayout class="card-image-boday" orientation="vertical">
+                <StackLayout class="boday-bg-image" [ngStyle]="{'background': ahImage}" orientation="vertical">
+                    <StackLayout horizontalAlignment="center" orientation="horizontal">
+                        <Label verticalAlignment="center" [text]="getAllahName?.name"></Label>
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout orientation="horizontal">
+                    <StackLayout (tap)="sendAllAhImage(getAllahName.name)" orientation="horizontal">
+                        <Image src="res://icon_send"></Image>
+                        <Label text="Send" textWrap="true"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </FlexboxLayout>
+        <FlexboxLayout class="card card-image" flexDirection="column" justifyContent="space-between">
+            <StackLayout class="card-header" orientation="vertical">
+                <Label class="title" text="Daily Inspiration" textWrap="false"></Label>
+                <Label class="desc" text="Birthplace of inspiration" textWrap="false"></Label>
+            </StackLayout>
+            <StackLayout class="card-image-boday" orientation="vertical">
+                <!-- <Image src="~/assets/pic_DailyInspiration.png"></Image> -->
+                <Image [src]="getInspire?.inspire?.url"></Image>
+                <StackLayout  orientation="horizontal">
+                    <StackLayout orientation="horizontal">
+                        <Image src="res://icon_more"></Image>
+                        <Label [nsRouterLink]="['inspiration']" text="More" textWrap="true"></Label>
+                    </StackLayout>
+                    <StackLayout (tap)="shareImage(getInspire.inspire.url)" orientation="horizontal">
+                        <Image  src="res://icon_share"></Image>
+                        <Label text="Share" textWrap="true"></Label>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </FlexboxLayout>
+        <FlexboxLayout class="card card-text" flexDirection="column" justifyContent="space-between">
+            <StackLayout class="card-header" orientation="vertical">
+                <Label class="title" text="Daily Hadith" textWrap="false"></Label>
+                <Label class="desc" text="Send to a friend" textWrap="false"></Label>
+            </StackLayout>
+            <StackLayout class="card-text-boday" orientation="vertical">
+                <Label horizontalAlignment="left" [text]="getSaying?.content" textWrap="true"></Label>
+                <StackLayout  (tap)="shareApp()" orientation="horizontal">
+                    <Image src="res://icon_share"></Image>
+                    <Label text="Share Muslim Candy" textWrap="true"></Label>
+                </StackLayout>
+            </StackLayout>
+    </FlexboxLayout>
+    </StackLayout>
+</ScrollView>

@@ -1,0 +1,10 @@
+<ActionBar [title]="title">
+        <NavigationButton icon="res://icon_return" (tap)="goBack()"></NavigationButton>
+</ActionBar>
+<StackLayout class="page">
+        <StackLayout class="calendar" tkExampleTitle tkToggleNavButton>
+                <RadCalendar #myRalendar #myCalendar [selectedDates]="selectedDates" selectionMode="Range" 
+                [eventSource]="eventSource" (Swipe)="setEventSource($event)" (loaded)="calendarloaded($event)"
+                (viewModeChanged)="onViewModeChangedEvent($event)" [selectionMode]="selectionMode"></RadCalendar> 
+        </StackLayout>
+</StackLayout>

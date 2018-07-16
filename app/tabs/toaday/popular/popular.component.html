@@ -1,0 +1,18 @@
+<StackLayout sdkExampleTitle sdkToggleNavButton orientation="vertical" class="page" orientation="vertical">
+    <Image src="res://pic_1"></Image>
+    <FlexboxLayout class="h2" justifyContent="flex-start">
+        <Label alignSelf="center" text="Suras" class="list-group-item-heading"></Label>
+    </FlexboxLayout>
+    <ListView class="list-group" [items]="chapters" margin="0 20">
+        <ng-template let-country="item">
+            <FlexboxLayout [nsRouterLink]="['../koransecondarypage/' + country.id]" flexDirection="row" class="list-group-item" paddingLeft="0" paddingRight="0">
+                <StackLayout orientation="vertical" width="70%">
+                    <Label horizontalAlignment="left" [text]="country.chineseInfo.title" class="list-group-item-heading" verticalAlignment="center"></Label>
+                </StackLayout>
+                <StackLayout orientation="vertical" width="30%">
+                    <Image horizontalAlignment="right" src="res://icon_getinto" class="thumb img-circle"></Image>
+                </StackLayout>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+</StackLayout>

@@ -1,0 +1,60 @@
+.page {
+
+    .title{
+        font-size: 12;
+        line-height: 15;
+        padding: 9.5 0 10.5;
+        font-weight: bold;
+    }
+
+    WrapLayout{
+        padding: 0 17 0 19;
+        color: rgb(102, 102, 102);
+        width: 100%;
+
+        StackLayout{
+            width: 100%;
+            padding: 10 31 10.5 0; 
+            line-height: 15;
+            color: #000;
+            // background: red;
+
+            .tit_h1{
+                font-size: 14;
+                line-height: 15;
+                
+                Label{
+                    padding-left: 26.5;
+                    color: rgb(53, 108, 44);
+                }
+                FlexboxLayout{
+                    label{
+                        padding: 0;
+                        font-size: 15;
+                    }
+                }
+                .blackbody{
+                    color: rgb(51, 51, 51);
+                }
+                .bold{
+                    font-weight: bold;
+                }
+                .name{
+                    font-size: 47.5;
+                    line-height: 23.8;
+                }
+            }
+
+            // .content{
+            //     font-size: 12;
+            //     color: rgb(102, 102, 102);
+            //     padding-left: 29;
+
+            //     .text{
+            //         font-size: 30;
+            //         margin-top: -5;
+            //     }
+            // }
+        }
+    }
+}

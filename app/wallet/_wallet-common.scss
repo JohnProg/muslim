@@ -1,0 +1,24 @@
+.page{
+    padding: 0 10;   
+    font-size: 15;
+  
+    .hlc{
+      height: 41;
+      padding-left: 26;
+      line-height: 15;
+      font-weight: bold;
+      color: rgb(51, 51, 51);
+    }
+    
+    .list-group{
+      margin: 0 10;
+
+      .list-group-item{
+        padding-left: 15;
+      }
+
+      .list-group-item-heading{
+        color: rgb(102, 102, 102);
+      }
+    }
+}

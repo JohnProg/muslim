@@ -1,0 +1,51 @@
+// Import app variables
+@import 'app-variables';
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+// Font icon class
+.fa {
+    font-family: "FontAwesome";
+}
+// Common page class
+// .page-content {
+//     .page-placeholder {
+//         color: $page-icon-color;
+//         font-size: $page-content-placeholder-font-size;
+//         vertical-align: center;
+//         horizontal-align: center;
+//     }
+
+//     .page-icon {
+//         font-size: 72;
+//         vertical-align: top;
+//         horizontal-align: center;
+//         color: $page-icon-color;
+//         margin-top: 20%;
+//     }
+
+//     .list-group{
+//         .list-group-item-heading{
+//             font-size: 15;
+//             color: rgb(51,51,51); 
+//         }
+
+//         .img-circle{
+//             width: 10;
+//             height: 17.5;
+//             margin: 0;
+//         }
+//     }
+// }
+
+//Action bar
+ActionBar .action-bar-title {
+    horizontal-align: center;
+}
+
+TabView {
+    tab-text-color: $tab-text-color;
+    selected-tab-text-color: $tab-selected-text-color;
+    tab-background-color: $background;
+}

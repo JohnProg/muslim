@@ -1,0 +1,16 @@
+    <ActionBarExtension>
+            <ActionItem *ngIf="aIndex===2">
+                    <FlexboxLayout justifyContent="space-around" alignItems="center"  width="100%"  height="54">
+                            <Image  (tap)="isChange(i)" class="m-r-30" *ngFor="let item of images; let i=index" width="29" height="29" [src]="item.src"></Image>
+                    </FlexboxLayout>
+            </ActionItem>
+    </ActionBarExtension>
+    <StackLayout *ngIf="choose === 0">
+        <koran></koran>
+    </StackLayout>
+    <StackLayout *ngIf="choose === 1">
+        <koransearch></koransearch>
+    </StackLayout>
+    <StackLayout *ngIf="choose === 2">
+        <koranmore></koranmore>
+    </StackLayout>

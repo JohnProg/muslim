@@ -1,0 +1,6 @@
+<ActionBarExtension *ngIf="kIndex===3">
+    <NavigationButton icon="res://icon_return" (tap)="goBack()"></NavigationButton>
+</ActionBarExtension>
+<GridLayout>
+    <WebView #myWebView [src]="webViewSrc"></WebView>
+</GridLayout>

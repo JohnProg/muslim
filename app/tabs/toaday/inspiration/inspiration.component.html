@@ -1,0 +1,15 @@
+<ScrollView sdkExampleTitle sdkToggleNavButton class="page">
+    <WrapLayout>
+        <StackLayout class="card" *ngFor="let country of getInspires" orientation="vertical">
+            <Image [src]="country.url"></Image>
+            <StackLayout orientation="vertical" class="h3-tit">
+                <FlexboxLayout horizontalAlignment="right">
+                    <Image (tap)="onClickCollect(country.isCollect, country.id)"  *ngIf="country.isCollect" src="res://icon_like"></Image>
+                    <Image (tap)="onClickCollect(country.isCollect, country.id)"  *ngIf="!country.isCollect" src="res://icon_like2"></Image>
+                    <Label [text]="country.id"></Label>
+                    <Label [text]="country.fileName"></Label>
+                </FlexboxLayout>
+            </StackLayout>
+        </StackLayout>
+    </WrapLayout>
+</ScrollView>

@@ -1,0 +1,20 @@
+<StackLayout class="m-l-10 m-r-10">
+    <GridLayout marginTop="10" backgroundColor="rgb(243,243,243)" class="content" height="30" columns="auto,auto" rows="auto,auto" >
+        <Label class="sarch" col="0" width="20%"  row="0"></Label>
+        <TextField borderBottomWidth="1" borderColor="#000000" class="text"  [(ngModel)]="chapter" height="35"  (returnPress)="submit()" fontSize="12"  returnKeyType="search" hint="{{sbHint}}" text="" col="1" width="70%" row="0"  text=""></TextField>
+    </GridLayout>
+ </StackLayout>
+<ListView [items]="items" (loadMoreItems)="loadMoreItems()">
+    <ng-template let-item="item" let-i="index">
+            <FlexboxLayout [nsRouterLink]="['koranread',chapter]" (tap)="getReadContent(item.no)" marginBottom="10" marginTop="10" class="p-l-10 p-r-15" flexDirection="column">
+                    <FlexboxLayout flexDirection="column" >
+                        <FlexboxLayout >
+                            <Image  (tap)="markSections(item.no,item)" width="15" [src]="item.isMark ? 'res://bookmarksyes' : 'res://bookmarksno'"></Image>
+                            <Label  marginLeft="5" letterSpacing="0.1" color="rgb(102,102,102)"  [text]="item.length" ></Label>
+                        </FlexboxLayout>
+                        <Label color="black" fontSize="24" paddingBottom="10"  alignSelf="flex-end" [text]="item.text" textWrap="true" ></Label>
+                        <Label color="rgb(129, 97, 76)" fontSize="13" paddingLeft="10" alignSelf="flex-end" [text]="item.content" textWrap="true" ></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+    </ng-template>
+</ListView>

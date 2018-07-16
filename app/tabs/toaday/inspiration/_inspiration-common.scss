@@ -1,0 +1,24 @@
+.page{
+    color: rgb(53, 108, 44);
+
+    .card{
+        margin-bottom: 10;
+
+        .h3-tit{
+            padding-right: 9.5;
+            margin: 10 0;
+            
+            Label{
+                font-size: 15;
+                line-height: 18;
+                margin-left: 9.5;
+            }
+
+            Image{
+                width: 22;
+                height: 20;
+            }
+        }
+        
+    }
+}

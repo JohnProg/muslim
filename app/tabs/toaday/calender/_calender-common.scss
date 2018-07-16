@@ -1,0 +1,38 @@
+.page{
+
+    .calendar{
+        height: 455;
+    }
+
+    .h2{
+        // margin-top: 10;
+        border-top-width: 1;
+        border-color: rgba(229, 229, 229, 0.5);
+        padding: 10 15;
+        font-size: 15;
+        line-height: 15;
+        font-weight: bold;
+    }
+
+    .list-group{
+        margin: 0 15;
+        border-top-width: 1;
+        border-top-color: rgba(229, 229, 229, 0.5);
+        border-bottom-color: #fff;
+        font-size: 15;
+        line-height: 15;
+
+        .list-group-item{
+            padding: 8 0;
+            font-size: 14;
+            
+            .title{
+                color: rgb(102, 102, 102);
+            }
+
+            .date{
+                color: rgb(53, 108, 44);
+            }
+        }
+    }
+}

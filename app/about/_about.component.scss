@@ -1,0 +1,26 @@
+.page{
+    padding: 10.5 20 0;
+
+    .list-group{
+        .img-circle{
+            width: 23;
+            height: 23;
+        }
+
+        .list-group-item-heading{
+            padding-left: 30;
+            font-size: 15;
+            color: rgb(70, 70, 70);
+        }
+
+        .legalinfo{
+            padding-left: 0;
+            color: rgb(102, 102, 102);
+        }
+    }
+    
+    .h2{
+        font-size: 12;
+        font-weight: bold;
+    }
+}

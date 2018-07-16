@@ -1,0 +1,28 @@
+
+<StackLayout sdkExampleTitle sdkToggleNavButton orientation="vertical" class="page" orientation="vertical">
+    <MapView *ngIf="latitude && longitude" height="221" #mapView [latitude]="latitude" [longitude]="longitude"
+        [zoom]="zoom" [minZoom]="minZoom" [maxZoom]="maxZoom" [bearing]="bearing" [compassEnabled]="compassEnabled"
+        [tilt]="tilt" i-padding="50,50,50,50" [padding]="padding" (mapReady)="onMapReady($event)"
+        (markerSelect)="onMarkerEvent($event)" (markerBeginDragging)="onMarkerEvent($event)"
+        (markerEndDragging)="onMarkerEvent($event)" (markerDrag)="onMarkerEvent($event)"
+        (markerInfoWindowTapped)="onMarkerEvent($event)" (coordinateTapped)="onCoordinateTapped($event)"
+        (cameraChanged)="onCameraChanged($event)"></MapView>
+    <FlexboxLayout class="h2" flexDirection="column-reverse" justifyContent="flex-start">
+        <Label alignSelf="flex-end" [text]="'There are ' + len + ' mosques nearby'" class="list-group-item-heading"></Label>
+    </FlexboxLayout>
+    <ListView class="list-group" [items]="nearbySearch" margin="0 20">
+        <ng-template let-country="item">
+            <FlexboxLayout class="list-group-item">
+                <Image [src]="country.photoUrl" class="thumb img-party" width="20%"></Image>
+                <FlexboxLayout width="80%">
+                    <FlexboxLayout paddingLeft="32.5" width="60%" flexDirection="column-reverse" alignSelf="center">
+                        <Label [text]="country.name" class="list-group-item-heading"></Label>
+                    </FlexboxLayout>
+                    <FlexboxLayout width="40%" flexDirection="column-reverse" alignSelf="center">
+                        <Label alignSelf="flex-end" [text]="country.distance" class="list-group-item-heading distance"></Label>
+                    </FlexboxLayout>
+                </FlexboxLayout>
+            </FlexboxLayout>
+        </ng-template>
+    </ListView>
+</StackLayout> 

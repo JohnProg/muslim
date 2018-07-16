@@ -1,0 +1,29 @@
+<ActionBar  class="action-bar" [title]="title">
+    <ActionItem *ngIf="selectIndex !== 2 && selectIndex !== 3">
+        <Image width="24" src="res://icon_nav"></Image>
+    </ActionItem>
+    <ActionItem *ngIf="selectIndex !== 2 && selectIndex !== 3">
+        <FlexboxLayout width="17"></FlexboxLayout>
+    </ActionItem>
+</ActionBar>
+<TabView (selectedIndexChanged)="onSelectedIndexChanged($event)" selectedIndex="{{selIndex}}"  androidTabsPosition="bottom">
+    <StackLayout *tabItem="{title: 'Toaday', iconSource: 'res://icon_toaday'}">
+        <Toaday></Toaday>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Time', iconSource: 'res://icon_time'}">
+        <Time></Time>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Koran', iconSource: 'res://icon_koran'}">
+        <koranhome [aIndex]="selectIndex"></koranhome>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Kaaba', iconSource: 'res://icon_kaaba'}">
+        <Kaaba  [kIndex]="selectIndex"></Kaaba>
+    </StackLayout>
+
+    <StackLayout *tabItem="{title: 'Mine', iconSource: 'res://icon_mine'}">
+        <Mine></Mine>
+    </StackLayout>
+</TabView>

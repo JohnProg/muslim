@@ -1,0 +1,27 @@
+<ActionBar title="ROSAY">
+    <NavigationButton icon="res://icon_return"  (tap)="goBack()"></NavigationButton>
+</ActionBar>
+<StackLayout class="page">
+    <Image class="banner" src="~/assets/pic_tasbih_banner.png"></Image>
+    <StackLayout class="header" orientation="horizontal">
+        <Image (tap)="resetBeadNum()" src="res://icon_refresh"></Image>
+        <Image (tap)="toggleVoice()" [src]="isPlay ? 'res://icon_play' : 'res://icon_mute'"></Image>
+        <Image [src]="beadNumObj.roundNum === 99 ? 'res://icon_99' : 'res://icon_33'" (tap)="toggleRoundType()"></Image>
+    </StackLayout>
+    <AbsoluteLayout class="main" (swipe)="onSwipe($event)">
+        <Image class="main-line" src="~/assets/tasbih_line.png" top="0" left="0"></Image>
+        <Image #beadLeft class="main-bead-left" src="~/assets/bead-left.png" left="-29" top="58"></Image>
+        <Image #beadRight class="main-bead-right" src="~/assets/bead-right.png" left="235" top="-20"></Image>
+        <Image #beadMove class="main-bead-move" src="~/assets/tasbih_zhu_4.png" left="58" top="26"></Image>
+    </AbsoluteLayout>
+    <StackLayout class="footer">
+        <StackLayout orientation="horizontal">
+            <Label class="num-large" [text]="beadNumObj.currentNum" textWrap="true"></Label>
+            <Label class="num-normal" [text]="'/' + beadNumObj.roundNum" textWrap="true"></Label>
+        </StackLayout>
+        <StackLayout class="total-stack" orientation="horizontal">
+            <Label text="Total:" textWrap="true"></Label>
+            <Label class="num" [text]="beadNumObj.total" textWrap="true"></Label>
+        </StackLayout>
+    </StackLayout>
+</StackLayout>

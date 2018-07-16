@@ -1,0 +1,7 @@
+<WrapLayout width="100%" class="container" class="text-center" sdkExampleTitle sdkToggleNavButton>
+        <StackLayout (tap)="onTap(item)" width="33.333%" class="iconLink" *ngFor="let item of items" class="p-10 text-center">
+                <Image width="40" *ngIf="item.text !== 'quran'" height="40" [src]="item.icon" [nsRouterLink]="[item.routerLink]"></Image>
+                <Image width="40" *ngIf="item.text === 'quran'" height="40" [src]="item.icon"></Image>
+                <Label [text]="item.text" textWrap="false"></Label>
+        </StackLayout>
+</WrapLayout>
